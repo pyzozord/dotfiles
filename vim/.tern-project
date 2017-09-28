@@ -1,0 +1,21 @@
+{
+	"libs": [
+		"browser",
+		"jquery"
+	],
+	"loadEagerly": [
+	],
+	"plugins": {
+    "modules": {},
+    "es_modules": {},
+    "node": {},
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    },
+		"requirejs": {
+			"baseURL": "./",
+			"paths": {}
+		}
+	}
+}

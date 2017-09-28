@@ -1,0 +1,5 @@
+[user]
+	name = Michal Radecki
+	email = odrzutowiec@gmail.com
+[core]
+	editor = /usr/bin/vim
