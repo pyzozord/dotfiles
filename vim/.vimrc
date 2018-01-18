@@ -1,9 +1,12 @@
 call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-syntastic/syntastic'
+" Plug 'ternjs/tern_for_vim'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-fugitive'
 "Plug 'terryma/vim-multiple-cursors'
 call plug#end()
@@ -18,6 +21,7 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 " random
+set path+=**
 set encoding=utf-8
 filetype plugin indent on
 set cursorline
@@ -38,11 +42,18 @@ set wildmode=full
 set bufhidden=hide
 set hidden
 set mouse=a
-set rulerformat=%f
+set noruler
 set nowrap
-"set fillchars+=vert:\ 
-"match ErrorMsg '\%>80v.\+'
-"set spell spelllang=en_us
+set list
+set listchars=tab:-\ ,trail:·
+set colorcolumn=80
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 "windows
 map <c-j> <c-w>j
