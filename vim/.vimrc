@@ -3,24 +3,30 @@ Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-syntastic/syntastic'
-" Plug 'ternjs/tern_for_vim'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-commentary'
-"Plug 'tpope/vim-fugitive'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ternjs/tern_for_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
+" Plug 'vim-syntastic/syntastic'
 call plug#end()
 
-" load sensible now so we can override it
+" Load sensible now so we can override it
 runtime! plugin/sensible.vim
 
-" colors
+" Colors
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-" random
+" Random
 set path+=**
 set encoding=utf-8
 filetype plugin indent on
@@ -48,14 +54,21 @@ set list
 set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-"windows
+" Ale
+let g:ale_linters = {"javascript": ["eslint"]}
+
+" Syntastic
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_javascript_checkers = ["eslint"]
+" let g:syntastic_javascript_eslint_exe="$(npm bin)/eslint"
+
+" Windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
