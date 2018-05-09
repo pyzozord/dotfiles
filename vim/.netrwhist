@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/pyzozord/Projects/b2bwebapp/node_modules/@fixico/react-build-deps'
-let g:netrw_dirhist_2='/Users/pyzozord/Projects/b2bwebapp/node_modules/@fixico/react-build-deps/webpack'
-let g:netrw_dirhist_3='/Users/pyzozord/Projects/b2bwebapp'
-let g:netrw_dirhist_4='/Users/pyzozord/Projects/b2bwebapp/node_modules'
-let g:netrw_dirhist_5='/Users/pyzozord/Projects/b2bwebapp/node_modules/@fixico'
-let g:netrw_dirhist_6='/Users/pyzozord/Projects/b2bwebapp/node_modules/@fixico/react-build-deps'
-let g:netrw_dirhist_7='/Users/pyzozord/Projects/meeseeks-box/packages/react-lib-deps'
