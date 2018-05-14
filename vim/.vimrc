@@ -10,7 +10,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
@@ -57,7 +57,9 @@ set colorcolumn=80
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Ale
-let g:ale_linters = {"javascript": ["eslint"]}
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fix_on_save = 1
 
 " Syntastic
 " let g:syntastic_always_populate_loc_list = 1
