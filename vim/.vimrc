@@ -54,7 +54,7 @@ set list
 set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 
 " Ale
 let g:ale_linters = {'javascript': ['eslint']}
@@ -79,8 +79,8 @@ map K <c-w>k
 map L <c-w>l
 map H <c-w>h
 " Buffers
-map <c-b> :bp<cr><c-g>
-map <c-n> :bn<cr><c-g>
+map <c-b> :bp<cr>
+map <c-n> :bn<cr>
 map <c-x> :bd<cr>
 map <c-x><c-x> :bd!<cr>
 " Utils
