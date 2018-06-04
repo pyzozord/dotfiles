@@ -8,7 +8,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 " Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -70,19 +70,21 @@ let g:ale_fix_on_save = 1
 " let g:syntastic_javascript_checkers = ["eslint"]
 " let g:syntastic_javascript_eslint_exe="$(npm bin)/eslint"
 
-" Moving
-map <c-j> 3j
-map <c-k> 3k
-" Windows
-map J <c-w>j
-map K <c-w>k
-map L <c-w>l
-map H <c-w>h
-" Buffers
-map <c-b> :bp<cr>
-map <c-n> :bn<cr>
-map <c-x> :bd<cr>
-map <c-x><c-x> :bd!<cr>
-" Utils
-map <c-w><c-w> :w<cr>
-map <c-c><c-c><c-c> :qa<cr>
+augroup AfterEverythingElse
+  autocmd!
+  " Utils
+  autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
+  autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa<cr>
+  " Moving
+  autocmd VimEnter * :nnoremap <c-j> 3j
+  autocmd VimEnter * :nnoremap <c-k> 3k
+  " Windows
+  autocmd VimEnter * :nnoremap J <c-w>j
+  autocmd VimEnter * :nnoremap K <c-w>k
+  autocmd VimEnter * :nnoremap L <c-w>l
+  autocmd VimEnter * :nnoremap H <c-w>h
+  " Buffers
+  autocmd VimEnter * :nnoremap <c-n> :bn<cr>
+  autocmd VimEnter * :nnoremap <c-b> :bp<cr>
+  autocmd VimEnter * :nnoremap <c-x> :bd<cr>
+augroup END
