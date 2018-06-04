@@ -9,12 +9,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'airblade/vim-gitgutter'
 " Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
-" Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Load some plugins now to override them
@@ -61,18 +59,12 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
 
-" Syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_javascript_checkers = ["eslint"]
-" let g:syntastic_javascript_eslint_exe="$(npm bin)/eslint"
+" Multiple coursors
+let g:multi_cursor_quit_key = '<c-c>'
 
 augroup AfterEverythingElse
   autocmd!
-  " Utils
+  " Utis
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
   autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa!<cr>
   " Moving
@@ -80,7 +72,7 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <c-k> 3k
   " Windows
   autocmd VimEnter * :nnoremap JJ <c-w>j
-  autocmd VimEnter * :nnoremap KL <c-w>k
+  autocmd VimEnter * :nnoremap KK <c-w>k
   autocmd VimEnter * :nnoremap LL <c-w>l
   autocmd VimEnter * :nnoremap HH <c-w>h
   " Buffers
