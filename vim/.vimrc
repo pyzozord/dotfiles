@@ -74,17 +74,17 @@ augroup AfterEverythingElse
   autocmd!
   " Utils
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
-  autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa<cr>
+  autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa!<cr>
   " Moving
   autocmd VimEnter * :nnoremap <c-j> 3j
   autocmd VimEnter * :nnoremap <c-k> 3k
   " Windows
-  autocmd VimEnter * :nnoremap J <c-w>j
-  autocmd VimEnter * :nnoremap K <c-w>k
-  autocmd VimEnter * :nnoremap L <c-w>l
-  autocmd VimEnter * :nnoremap H <c-w>h
+  autocmd VimEnter * :nnoremap JJ <c-w>j
+  autocmd VimEnter * :nnoremap KL <c-w>k
+  autocmd VimEnter * :nnoremap LL <c-w>l
+  autocmd VimEnter * :nnoremap HH <c-w>h
   " Buffers
   autocmd VimEnter * :nnoremap <c-n> :bn<cr>
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
-  autocmd VimEnter * :nnoremap <c-x> :bd<cr>
+  autocmd VimEnter * :nnoremap <c-x><c-x> :bd<cr>
 augroup END
