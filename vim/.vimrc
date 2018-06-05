@@ -13,6 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Load some plugins now to override them
@@ -21,6 +22,8 @@ runtime! plugin/sensible.vim
 " Colors
 syntax enable
 set background=dark
+" set term=screen-256color
+set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
 
