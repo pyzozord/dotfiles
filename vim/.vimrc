@@ -72,11 +72,6 @@ augroup AfterEverythingElse
   " Moving
   autocmd VimEnter * :nnoremap <c-j> 3j
   autocmd VimEnter * :nnoremap <c-k> 3k
-  " Windows
-  autocmd VimEnter * :nnoremap JJ <c-w>j
-  autocmd VimEnter * :nnoremap KK <c-w>k
-  autocmd VimEnter * :nnoremap LL <c-w>l
-  autocmd VimEnter * :nnoremap HH <c-w>h
   " Buffers
   autocmd VimEnter * :nnoremap <c-n> :bn<cr>
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
