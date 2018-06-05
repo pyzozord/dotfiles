@@ -9,7 +9,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
@@ -22,7 +21,6 @@ runtime! plugin/sensible.vim
 " Colors
 syntax enable
 set background=dark
-" set term=screen-256color
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -68,6 +66,7 @@ let g:multi_cursor_quit_key = '<c-c>'
 augroup AfterEverythingElse
   autocmd!
   " Utis
+  autocmd VimEnter * :inoremap <c-c> <esc>
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
   autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa!<cr>
   " Moving
