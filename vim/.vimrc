@@ -14,6 +14,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoComplPop'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Load some plugins now to override them
