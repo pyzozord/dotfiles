@@ -13,6 +13,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/AutoComplPop'
 call plug#end()
 
 " Load some plugins now to override them
@@ -53,12 +54,17 @@ set list
 set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 
+" Omnicompletion
+set completeopt=longest,menuone
+
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 
 " Ale
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_delay = 10
 
 " Multiple coursors
 let g:multi_cursor_quit_key = '<c-c>'

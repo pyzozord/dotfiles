@@ -1,11 +1,20 @@
 {
-	"libs": [
-		"browser",
-		"jquery"
-	],
-	"loadEagerly": [
-	],
-	"plugins": {
+  "ecmaVersion": 7,
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser",
+    "jquery",
+    "browser",
+    "underscore",
+    "lodash",
+    "react"
+  ],
+  "loadEagerly": [],
+  "dontLoad": [
+    "node_modules/**"
+  ],
+  "plugins": {
     "modules": {},
     "es_modules": {},
     "node": {},
@@ -13,9 +22,15 @@
       "fullDocs": true,
       "strong": true
     },
-		"requirejs": {
-			"baseURL": "./",
-			"paths": {}
-		}
-	}
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    },
+    "webpack": {
+      "configPath": "./webpack.config.js"
+    },
+    "complete_strings": {
+      "maxLength": 15
+    }
+  }
 }
