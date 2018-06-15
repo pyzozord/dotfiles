@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
 Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -23,8 +24,13 @@ runtime! plugin/sensible.vim
 syntax enable
 set background=dark
 set term=xterm-256color
-let g:solarized_termcolors=256
-colorscheme solarized
+" let g:solarized_termcolors=256
+" colorscheme solarized
+set termguicolors
+let base16colorspace=256
+colorscheme base16-tomorrow-night
+highlight Normal guibg=NONE
+highlight LineNr guibg=NONE
 
 " Random
 set path+=**
