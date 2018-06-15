@@ -2,7 +2,7 @@
 	name = Michal Radecki
 	email = odrzutowiec@gmail.com
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
