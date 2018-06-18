@@ -8,6 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'jiangmiao/auto-pairs'
 " Programming
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
