@@ -21,14 +21,17 @@ call plug#end()
 runtime! plugin/sensible.vim
 
 " Colors
+if empty($TMUX)
+  let g:solarized_termcolors=256
+  colorscheme solarized
+else
+  set termguicolors
+  let base16colorspace=256
+  colorscheme base16-tomorrow-night
+endif
 syntax enable
 set background=dark
 set term=xterm-256color
-" let g:solarized_termcolors=256
-" colorscheme solarized
-set termguicolors
-let base16colorspace=256
-colorscheme base16-tomorrow-night
 highlight Normal guibg=NONE
 highlight LineNr guibg=NONE
 

@@ -1,0 +1,22 @@
+{
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser",
+    "jquery",
+    "react"
+  ],
+  "plugins": {
+    "angular": {},
+    "doc_comment": null,
+    "es_modules": {},
+    "node": {},
+    "webpack": {},
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    }
+  },
+  "dontLoad": [ "node_modules/**" ],
+  "ecmaVersion": 6
+}
