@@ -1,20 +1,27 @@
 call plug#begin('~/.vim/plugged')
+" Utils
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
-Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ternjs/tern_for_vim'
-Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+" Programming
+Plug 'sheerun/vim-polyglot'
+" Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
+" Themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+" Git
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/AutoComplPop'
+" Completion
+" Plug 'vim-scripts/AutoComplPop'
+" Plug 'aperezdc/vim-lift'
+Plug 'maralla/completor.vim'
 call plug#end()
 
 " Load some plugins now to override them
@@ -76,6 +83,9 @@ let g:ale_fix_on_save = 1
 
 " Multiple coursors
 let g:multi_cursor_quit_key = '<c-c>'
+
+" Completor
+let g:completor_min_chars = 1
 
 augroup AfterEverythingElse
   autocmd!
