@@ -40,8 +40,8 @@ endif
 syntax enable
 set background=dark
 set term=xterm-256color
-highlight Normal guibg=NONE
-highlight LineNr guibg=NONE
+highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
 
 " Random
 set path+=**
