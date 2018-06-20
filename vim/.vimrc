@@ -9,6 +9,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
 " Programming
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
@@ -19,6 +20,7 @@ Plug 'chriskempson/base16-vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Completion
 " Plug 'vim-scripts/AutoComplPop'
 " Plug 'aperezdc/vim-lift'
@@ -93,7 +95,10 @@ augroup AfterEverythingElse
   " Utis
   autocmd VimEnter * :inoremap <c-c> <esc>
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
-  autocmd VimEnter * :nnoremap <c-c><c-c><c-c> :qa!<cr>
+  autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
+  autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
+  autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
+  autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
   " Moving
   autocmd VimEnter * :nnoremap <c-j> 3j
   autocmd VimEnter * :nnoremap <c-k> 3k
