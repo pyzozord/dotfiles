@@ -12,7 +12,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 " Programming
 Plug 'sheerun/vim-polyglot'
-" Plug 'ternjs/tern_for_vim'
+Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -73,10 +73,9 @@ set list
 set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 set splitright
-
-" Omnicompletion
 set completeopt=longest,menuone
 
+" CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 
 " Ale
@@ -89,6 +88,9 @@ let g:multi_cursor_quit_key = '<c-c>'
 
 " Completor
 let g:completor_min_chars = 1
+
+" Tern
+let g:tern_request_query = { 'completions': { 'includeKeywords': 1, 'sort': 1, 'guess': 1, 'url': 1, 'caseInsensitive': 1, 'origins': 1 } }
 
 augroup AfterEverythingElse
   autocmd!
