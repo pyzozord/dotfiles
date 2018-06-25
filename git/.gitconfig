@@ -3,6 +3,7 @@
 	email = odrzutowiec@gmail.com
 [core]
 	editor = vim
+	ignorecase = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
