@@ -10,6 +10,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'qpkorr/vim-bufkill'
 " Programming
 Plug 'sheerun/vim-polyglot'
 Plug 'ternjs/tern_for_vim'
@@ -107,5 +108,5 @@ augroup AfterEverythingElse
   " Buffers
   autocmd VimEnter * :nnoremap <c-n> :bn<cr>
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
-  autocmd VimEnter * :nnoremap <c-x><c-x> :bd<cr>
+  autocmd VimEnter * :nnoremap <c-x><c-x> :BD<cr>
 augroup END
