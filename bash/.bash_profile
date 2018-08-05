@@ -12,3 +12,4 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion.d/git-flow-completion.bash ]; then
   . `brew --prefix`/etc/bash_completion.d/git-flow-completion.bash
 fi
+export PATH=/usr/local/opt/mysql@5.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin

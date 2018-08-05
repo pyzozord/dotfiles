@@ -100,11 +100,12 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
   autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
   autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
+  autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
   autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
   autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
   " Moving
-  autocmd VimEnter * :nnoremap <c-j> 3j
-  autocmd VimEnter * :nnoremap <c-k> 3k
+  autocmd VimEnter * :noremap <c-j> 3j
+  autocmd VimEnter * :noremap <c-k> 3k
   " Buffers
   autocmd VimEnter * :nnoremap <c-n> :bn<cr>
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
