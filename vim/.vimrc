@@ -11,12 +11,15 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-unimpaired'
+Plug 'wellle/targets.vim'
 " Programming
 Plug 'sheerun/vim-polyglot'
 Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 " Themes
 Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -31,13 +34,22 @@ call plug#end()
 runtime! plugin/sensible.vim
 
 " Colors
-let g:solarized_termcolors=256
-colorscheme solarized
+if !empty($TMUX) || has("gui_running")
+  set termguicolors
+  if !has("gui_running")
+    let base16colorspace=256
+  endif
+  colorscheme base16-tomorrow-night
+else
+  let g:solarized_termcolors=256
+  colorscheme solarized
+  if !has('nvim')
+    set term=xterm-256color
+  endif
+endif
 syntax enable
 set background=dark
-set term=xterm-256color
 highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
 
 " Random
 set path+=**
@@ -69,6 +81,9 @@ set colorcolumn=80
 set splitright
 set completeopt=longest,menuone
 
+" GitGutter
+let g:gitgutter_async = 1
+
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 
@@ -94,8 +109,10 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
   autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
   autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
-  autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
-  autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
+  if !has('nvim')
+    autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
+    autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
+  endif
   " Moving
   autocmd VimEnter * :noremap <c-j> 3j
   autocmd VimEnter * :noremap <c-k> 3k
