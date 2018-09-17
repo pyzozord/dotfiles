@@ -55,7 +55,7 @@ highlight Normal guibg=NONE ctermbg=NONE
 set path+=**
 set encoding=utf-8
 filetype plugin indent on
-set cursorline
+" set cursorline
 set number
 set tabstop=2
 set softtabstop=2
@@ -119,5 +119,5 @@ augroup AfterEverythingElse
   " Buffers
   autocmd VimEnter * :nnoremap <c-n> :bn<cr>
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
-  autocmd VimEnter * :nnoremap <c-x><c-x> :BD<cr>
+  autocmd VimEnter * :nnoremap <c-x><c-x> :BD!<cr>
 augroup END
