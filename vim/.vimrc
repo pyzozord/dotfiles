@@ -1,21 +1,27 @@
 call plug#begin('~/.vim/plugged')
+" Vim / Nvim stuff
+if has('nvim')
+  Plug 'roxma/nvim-yarp'
+else
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 " Utils
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'jiangmiao/auto-pairs'
+Plug 'wellle/targets.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
-Plug 'tpope/vim-unimpaired'
-Plug 'wellle/targets.vim'
 " Programming
 Plug 'sheerun/vim-polyglot'
-Plug 'ternjs/tern_for_vim'
+" Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -27,7 +33,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Completion
 " Plug 'vim-scripts/AutoComplPop'
 " Plug 'aperezdc/vim-lift'
-Plug 'maralla/completor.vim'
+" Plug 'maralla/completor.vim'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'filipekiss/ncm2-look.vim'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 call plug#end()
 
 " Load some plugins now to override them
@@ -79,7 +91,7 @@ set list
 set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 set splitright
-set completeopt=longest,menuone
+set completeopt=noinsert,menuone,noselect
 
 " GitGutter
 let g:gitgutter_async = 1
@@ -95,11 +107,21 @@ let g:ale_fix_on_save = 1
 " Multiple coursors
 let g:multi_cursor_quit_key = '<c-c>'
 
+" Deoplete.
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option({
+" \ 'auto_complete_delay': 200,
+" \ 'smart_case': v:true,
+" \ })
+
 " Completor
-let g:completor_min_chars = 1
+" let g:completor_min_chars = 1
 
 " Tern
-let g:tern_request_query = { 'completions': { 'includeKeywords': 1, 'sort': 1, 'guess': 1, 'url': 1, 'caseInsensitive': 1, 'origins': 1 } }
+" let g:tern_request_query = { 'completions': { 'includeKeywords': 1, 'sort': 1, 'guess': 1, 'url': 1, 'caseInsensitive': 1, 'origins': 1 } }
+
+" NCM2
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
 augroup AfterEverythingElse
   autocmd!
