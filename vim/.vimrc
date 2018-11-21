@@ -99,13 +99,17 @@ let g:gitgutter_async = 1
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 
+" Targets
+let g:targets_argOpening = '[({[]'
+let g:targets_argClosing = '[]})]'
+
+" Multiple coursors
+let g:multi_cursor_quit_key = '<c-c>'
+
 " Ale
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
-
-" Multiple coursors
-let g:multi_cursor_quit_key = '<c-c>'
 
 " Deoplete.
 " let g:deoplete#enable_at_startup = 1
