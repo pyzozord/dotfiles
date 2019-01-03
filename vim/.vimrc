@@ -19,6 +19,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
+Plug 'iamcco/markdown-preview.vim'
 " Programming
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
@@ -39,7 +40,7 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 Plug 'filipekiss/ncm2-look.vim'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+" Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 call plug#end()
 
 " Load some plugins now to override them
