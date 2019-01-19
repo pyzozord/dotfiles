@@ -21,13 +21,10 @@ export const deactivate = (oni: Oni.Plugin.Api) => {
 }
 
 export const configuration = {
-  "oni.loadInitVim": true,
-  // unsplash amsterdam collection 
-  // "editor.backgroundImageUrl": 'https://source.unsplash.com/collection/3013331',
   // giphy color smoke
-  // "editor.backgroundImageUrl": 'https://i.giphy.com/media/26BROrSHlmyzzHf3i/giphy.webp',
+  "editor.backgroundImageUrl": 'https://i.giphy.com/media/26BROrSHlmyzzHf3i/giphy.webp',
   "browser.defaultUrl": "https://google.com",
-  "editor.backgroundOpacity": 0.9,
+  "editor.backgroundOpacity": 0.8,
   "ui.colorscheme": "base16-tomorrow-night",
   "editor.fontSize": "12px",
   "editor.fontFamily": "Monaco",

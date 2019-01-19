@@ -15,11 +15,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
+Plug 'luochen1990/rainbow'
+Plug 'Yggdroot/indentLine'
 " Programming
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
@@ -29,7 +30,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Completion
 " Plug 'vim-scripts/AutoComplPop'
@@ -63,6 +65,11 @@ endif
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight DiffAdd ctermbg=NONE guibg=NONE
+highlight DiffChange ctermbg=NONE guibg=NONE
+highlight DiffDelete ctermbg=NONE guibg=NONE
 
 " Random
 set path+=**
@@ -93,9 +100,25 @@ set listchars=tab:-\ ,trail:·
 set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
+set spell
+
+" Rainbow
+let g:rainbow_active = 1
 
 " GitGutter
-let g:gitgutter_async = 1
+" let g:gitgutter_async = 1
+
+" Signify
+highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
+highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
+" highlight SignifyLineAdd ctermbg=NONE guibg=NONE
+" highlight SignifyLineChange ctermbg=NONE guibg=NONE
+" highlight SignifyLineDelete ctermbg=NONE guibg=NONE
+" highlight SignifySignAdd ctermbg=NONE guibg=NONE
+" highlight SignifySignChange ctermbg=NONE guibg=NONE
+" highlight SignifySignDelete ctermbg=NONE guibg=NONE
+" highlight SignifySignChangeDelete ctermbg=NONE guibg=NONE
+" highlight SignifySignDeleteFirstLine ctermbg=NONE guibg=NONE
 
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
@@ -148,3 +171,4 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <c-b> :bp<cr>
   autocmd VimEnter * :nnoremap <c-x><c-x> :BD!<cr>
 augroup END
+
