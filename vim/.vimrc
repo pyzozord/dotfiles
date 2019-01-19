@@ -20,13 +20,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
-Plug 'Yggdroot/indentLine'
 " Programming
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 " Themes
-Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 " Git
 Plug 'tpope/vim-fugitive'
@@ -49,33 +47,25 @@ call plug#end()
 runtime! plugin/sensible.vim
 
 " Colors
-if !empty($TMUX) || has("gui_running")
-  set termguicolors
-  if !has("gui_running")
-    let base16colorspace=256
-  endif
-  colorscheme base16-tomorrow-night
-else
-  let g:solarized_termcolors=256
-  colorscheme solarized
-  if !has('nvim')
-    set term=xterm-256color
-  endif
-endif
+set termguicolors
+colorscheme base16-tomorrow-night
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
-highlight DiffAdd ctermbg=NONE guibg=NONE
-highlight DiffChange ctermbg=NONE guibg=NONE
-highlight DiffDelete ctermbg=NONE guibg=NONE
+" highlight DiffAdd ctermbg=NONE guibg=NONE
+" highlight DiffChange ctermbg=NONE guibg=NONE
+" highlight DiffDelete ctermbg=NONE guibg=NONE
+highlight SignifySignAdd ctermbg=NONE guibg=NONE
+highlight SignifySignDelete ctermbg=NONE guibg=NONE
+highlight SignifySignChange ctermbg=NONE guibg=NONE
 
 " Random
+let mapleader=" "
 set path+=**
 set encoding=utf-8
 filetype plugin indent on
-" set cursorline
 set number
 set tabstop=2
 set softtabstop=2
@@ -87,7 +77,6 @@ set autoindent
 set smartindent
 set laststatus=0
 set hlsearch
-set ttyfast
 set incsearch
 set wildmode=full
 set bufhidden=hide
@@ -96,8 +85,8 @@ set mouse=a
 set noruler
 set nowrap
 set list
-set listchars=tab:-\ ,trail:·
-set colorcolumn=80
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
+" set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
 set spell
@@ -111,14 +100,9 @@ let g:rainbow_active = 1
 " Signify
 highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
 highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
-" highlight SignifyLineAdd ctermbg=NONE guibg=NONE
-" highlight SignifyLineChange ctermbg=NONE guibg=NONE
-" highlight SignifyLineDelete ctermbg=NONE guibg=NONE
-" highlight SignifySignAdd ctermbg=NONE guibg=NONE
-" highlight SignifySignChange ctermbg=NONE guibg=NONE
-" highlight SignifySignDelete ctermbg=NONE guibg=NONE
-" highlight SignifySignChangeDelete ctermbg=NONE guibg=NONE
-" highlight SignifySignDeleteFirstLine ctermbg=NONE guibg=NONE
+
+" Nerdtree
+let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
@@ -129,6 +113,12 @@ let g:targets_argClosing = '[]})]'
 
 " Multiple coursors
 let g:multi_cursor_quit_key = '<c-c>'
+function! Multiple_cursors_before()
+  call ncm2#lock('vim-multiple-cursors')
+endfunction
+function! Multiple_cursors_after()
+  call ncm2#unlock('vim-multiple-cursors')
+endfunction
 
 " Ale
 let g:ale_linters = {'javascript': ['eslint']}
@@ -154,6 +144,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 augroup AfterEverythingElse
   autocmd!
   " Utis
+  autocmd VimEnter * :noremap \ <leader>
   autocmd VimEnter * :inoremap <c-c> <esc>
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
   autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
