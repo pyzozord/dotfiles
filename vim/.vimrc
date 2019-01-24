@@ -49,14 +49,12 @@ runtime! plugin/sensible.vim
 " Colors
 set termguicolors
 colorscheme base16-tomorrow-night
+colorscheme base16-chalk
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
-" highlight DiffAdd ctermbg=NONE guibg=NONE
-" highlight DiffChange ctermbg=NONE guibg=NONE
-" highlight DiffDelete ctermbg=NONE guibg=NONE
 highlight SignifySignAdd ctermbg=NONE guibg=NONE
 highlight SignifySignDelete ctermbg=NONE guibg=NONE
 highlight SignifySignChange ctermbg=NONE guibg=NONE
@@ -93,9 +91,6 @@ set spell
 
 " Rainbow
 let g:rainbow_active = 1
-
-" GitGutter
-" let g:gitgutter_async = 1
 
 " Signify
 highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
@@ -144,12 +139,13 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 augroup AfterEverythingElse
   autocmd!
   " Utis
-  autocmd VimEnter * :noremap \ <leader>
+  autocmd VimEnter * :map \ <leader>
   autocmd VimEnter * :inoremap <c-c> <esc>
   autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
   autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
   autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
   autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
+  autocmd BufWritePost .vimrc :source %
   if !has('nvim')
     autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
     autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
