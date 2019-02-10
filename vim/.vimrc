@@ -21,6 +21,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
 " Programming
+Plug 'fatih/vim-go'
+" Plug 'sebdah/vim-delve'
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
@@ -39,8 +41,10 @@ Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 Plug 'filipekiss/ncm2-look.vim'
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-" Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'ncm2/ncm2-go',  {'do': 'go get -u github.com/mdempsky/gocode'}
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 call plug#end()
 
 " Load some plugins now to override them
@@ -49,7 +53,6 @@ runtime! plugin/sensible.vim
 " Colors
 set termguicolors
 colorscheme base16-tomorrow-night
-colorscheme base16-chalk
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
@@ -116,8 +119,8 @@ function! Multiple_cursors_after()
 endfunction
 
 " Ale
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 
 " Deoplete.
