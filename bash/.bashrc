@@ -1,4 +1,5 @@
-PS1='😈'
+prompts=('😈' '🌘' '🐵' '🤖' '👮' '😼' '🤘' '😴' '😬' '😳' '🤠' '👻' '🤓' '😅' '💀' '😰' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '💈')
+PS1=${prompts[$(((RANDOM % ${#prompts[*]})+1))]}
 
 export PATH="/usr/local/bin:$PATH"
 export TERM=xterm-color
@@ -12,10 +13,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
 fi
 
-# if [ -f $(brew --prefix)/etc/bash_completion.d/kubectl ]; then
-#   source $(brew --prefix)/etc/bash_completion.d/kubectl
-# fi
-
 if [ -x "$(command -v go)" ]; then
   export PATH="$PATH:$(go env GOPATH)/bin/"
 fi
@@ -27,7 +24,6 @@ fi
 export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export JAVA_HOME=/usr/local/Cellar/adoptopenjdk-openjdk8/jdk8u172-b11/
 # export ANDROID_HOME=${HOME}/Library/Android/sdk/

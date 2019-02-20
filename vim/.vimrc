@@ -103,7 +103,7 @@ highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
 let NERDTreeShowHidden=1
 
 " CtrlP
-let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 
 " Targets
 let g:targets_argOpening = '[({[]'
