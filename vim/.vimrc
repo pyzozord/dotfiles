@@ -20,6 +20,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
+Plug 'triglav/vim-visual-increment'
+" Plug 'mhinz/vim-startify'
 " Programming
 Plug 'fatih/vim-go'
 " Plug 'sebdah/vim-delve'
@@ -45,6 +47,9 @@ Plug 'filipekiss/ncm2-look.vim'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-go',  {'do': 'go get -u github.com/mdempsky/gocode'}
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/ncm2-phpactor'
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
 call plug#end()
 
 " Load some plugins now to override them
