@@ -1,11 +1,5 @@
 call plug#begin('~/.vim/plugged')
-" Vim / Nvim stuff
-if has('nvim')
-  Plug 'roxma/nvim-yarp'
-else
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-" Utils
+Plug 'roxma/nvim-yarp'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -21,21 +15,18 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
 Plug 'triglav/vim-visual-increment'
-" Plug 'mhinz/vim-startify'
-" Programming
+" Plug 'yuttie/comfortable-motion.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
-" Plug 'sebdah/vim-delve'
 Plug 'sheerun/vim-polyglot'
 " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
-" Themes
 Plug 'chriskempson/base16-vim'
-" Git
 Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Completion
 " Plug 'vim-scripts/AutoComplPop'
 " Plug 'aperezdc/vim-lift'
 " Plug 'maralla/completor.vim'
@@ -58,6 +49,7 @@ runtime! plugin/sensible.vim
 " Colors
 set termguicolors
 colorscheme base16-tomorrow-night
+colorscheme base16-chalk
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
@@ -72,7 +64,7 @@ let mapleader=" "
 set path+=**
 set encoding=utf-8
 filetype plugin indent on
-set number
+" set number
 set tabstop=2
 set softtabstop=2
 set smarttab
@@ -92,10 +84,11 @@ set noruler
 set nowrap
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
-" set colorcolumn=80
+set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
 set spell
+set diffopt=vertical
 
 " Rainbow
 let g:rainbow_active = 1
@@ -105,7 +98,7 @@ highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
 highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
 
 " Nerdtree
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
@@ -144,6 +137,13 @@ let g:ale_fix_on_save = 1
 " NCM2
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
+" Comfortable motion
+" nnoremap <silent> <C-d> :call comfortable_motion#flick(65)<cr>
+" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
+" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
+
+" Tagbar
+
 augroup AfterEverythingElse
   autocmd!
   " Utis
@@ -153,6 +153,7 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
   autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
   autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
+  autocmd VimEnter * :nnoremap <leader>g :TagbarToggle<cr>
   autocmd BufWritePost .vimrc :source %
   if !has('nvim')
     autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
