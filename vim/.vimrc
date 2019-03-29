@@ -16,6 +16,7 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
 Plug 'triglav/vim-visual-increment'
 " Plug 'yuttie/comfortable-motion.vim'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
@@ -74,7 +75,7 @@ set expandtab
 set autoindent
 set smartindent
 set laststatus=0
-set hlsearch
+" set nohlsearch
 set incsearch
 set wildmode=full
 set bufhidden=hide
@@ -84,7 +85,7 @@ set noruler
 set nowrap
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
-set colorcolumn=80
+" set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
 set spell
@@ -107,7 +108,7 @@ let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 let g:targets_argOpening = '[({[]'
 let g:targets_argClosing = '[]})]'
 
-" Multiple coursors
+" Multiple cursors
 let g:multi_cursor_quit_key = '<c-c>'
 function! Multiple_cursors_before()
   call ncm2#lock('vim-multiple-cursors')
@@ -155,10 +156,10 @@ augroup AfterEverythingElse
   autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
   autocmd VimEnter * :nnoremap <leader>g :TagbarToggle<cr>
   autocmd BufWritePost .vimrc :source %
-  if !has('nvim')
-    autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
-    autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
-  endif
+  " if !has('nvim')
+  "   autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
+  "   autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
+  " endif
   " Moving
   autocmd VimEnter * :noremap <c-j> 3j
   autocmd VimEnter * :noremap <c-k> 3k
