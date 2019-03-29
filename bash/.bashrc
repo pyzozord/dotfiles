@@ -1,5 +1,5 @@
-prompts=('😈' '🌘' '🐵' '🤖' '😼' '🤘' '😴' '😬' '😳' '👻' '🤓' '😅' '💀' '😰' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲')
-PS1=${prompts[$(((RANDOM % ${#prompts[*]})+1))]}
+prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
+PS1=${prompts[$(((RANDOM % ${#prompts[*]})))]}
 
 export PATH="/usr/local/bin:$PATH"
 export TERM=xterm-color
@@ -25,15 +25,34 @@ export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
 
-# export JAVA_HOME=/usr/local/Cellar/adoptopenjdk-openjdk8/jdk8u172-b11/
-# export ANDROID_HOME=${HOME}/Library/Android/sdk/
-# export ANDROID_SDK_ROOT=${ANDROID_HOME}
-# export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin
-
 alias nethack="telnet alt.org 23"
 alias aard="tt++ ~/.tt++/aard.tt"
-alias bat="tt++ ~/.tt++/bat.tt"
-alias genesis="tt++ ~/.tt++/genesis.tt"
+
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+bro() {
+  local domain=$(echo $1 | sed -nE 's|(https?://[^/]*)/.*|\1|pg')
+  if [ ! -t 0 ]; then
+    local html=`cat`
+  else
+    local html=$(curl -L -A "secretagent" "$@" )
+  fi
+  local formatted=$(echo "$html" | html-to-text --ignore-href --linkHrefBaseUrl=$domain --ignore-image)
+  less <<< "$formatted"
+}
+
+wiki() {
+  eval "bro https://en.wikipedia.org/w/index.php -G --data-urlencode search=\"$@\""
+}
+
+alias wk=wiki
+
+keeprunning() {
+  while true; do
+      $@
+      sleep 1
+  done
+}
 
 alias dashdir="cd ~/projects/frontend/dashboard"
 alias coredir="cd ~/projects/sms-core/core"
