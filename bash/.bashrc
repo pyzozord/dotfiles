@@ -1,5 +1,4 @@
 prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
-PS1=${prompts[$(((RANDOM % ${#prompts[*]})))]}
 
 export PATH="/usr/local/bin:$PATH"
 export TERM=xterm-color
@@ -27,6 +26,12 @@ export NVM_DIR=$HOME/.nvm
 
 alias nethack="telnet alt.org 23"
 alias aard="tt++ ~/.tt++/aard.tt"
+
+mood() {
+  PS1=${prompts[$(((RANDOM % ${#prompts[*]})))]}
+}
+
+mood
 
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
