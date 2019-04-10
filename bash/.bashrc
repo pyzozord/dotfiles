@@ -1,3 +1,4 @@
+# bash stuff
 prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
 
 export PATH="/usr/local/bin:$PATH"
@@ -6,26 +7,31 @@ export GREP_OPTIONS='--color=always' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+# ssh
+
 ssh-add -K ~/.ssh/id_rsa
 
+# bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
 fi
 
+# golang
 if [ -x "$(command -v go)" ]; then
   export PATH="$PATH:$(go env GOPATH)/bin/"
 fi
 
+# neovim
 if [ -x "$(command -v nvim)" ]; then
   alias vim=nvim
 fi
 
+# nvm
 export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
 
-alias nethack="telnet alt.org 23"
-alias aard="tt++ ~/.tt++/aard.tt"
+# functions
 
 mood() {
   PS1=${prompts[$(((RANDOM % ${#prompts[*]})))]}
@@ -50,8 +56,6 @@ wiki() {
   eval "bro https://en.wikipedia.org/w/index.php -G --data-urlencode search=\"$@\""
 }
 
-alias wk=wiki
-
 keeprunning() {
   while true; do
       $@
@@ -59,15 +63,23 @@ keeprunning() {
   done
 }
 
+matter() {
+  matterbridge -conf ~/.matterbridge.tom
+}
+
+# home aliases
+alias nethack="telnet alt.org 23"
+alias aard="tt++ ~/.tt++/aard.tt"
+alias wk=wiki
+
+#work aliases
 alias dashdir="cd ~/projects/frontend/dashboard"
 alias coredir="cd ~/projects/sms-core/core"
 alias daemonsdir="cd ~/projects/frontend/daemons"
 alias apidir="cd ~/projects/api0/rest-api"
-
 alias devstart="cd ~/projects/supportive/dash-core-development/;./start.sh"
 alias devstop="cd ~/projects/supportive/dash-core-development/;./stop.sh"
 alias devrestart="cd ~/projects/supportive/dash-core-development/;./restart.sh"
-
 alias dashssh="dashdir;docker-compose exec dashboard bash"
 alias coressh="coredir;docker-compose exec web bash"
 alias daemonsssh="daemonsdir;docker-compose exec daemons bash"
