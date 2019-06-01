@@ -1,9 +1,9 @@
 # bash stuff
 prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
 
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM=xterm-color
-export GREP_OPTIONS='--color=always' GREP_COLOR='1;32'
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
@@ -34,7 +34,7 @@ export NVM_DIR=$HOME/.nvm
 # functions
 
 mood() {
-  PS1=${prompts[$(((RANDOM % ${#prompts[*]})))]}
+  PS1=${prompts[$((RANDOM % ${#prompts[*]}))]}
 }
 
 mood
@@ -69,7 +69,6 @@ matter() {
 
 # home aliases
 alias nethack="telnet alt.org 23"
-alias aard="tt++ ~/.tt++/aard.tt"
 alias wk=wiki
 
 #work aliases

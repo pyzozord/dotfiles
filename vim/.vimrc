@@ -21,6 +21,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
+Plug 'peitalin/vim-jsx-typescript'
 " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
@@ -88,7 +89,7 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
 " set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
-set spell
+" set spell
 set diffopt=vertical
 
 " Rainbow
@@ -118,9 +119,10 @@ function! Multiple_cursors_after()
 endfunction
 
 " Ale
-let g:ale_linters = {'javascript': ['eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_linters = {'typescript': ['tsserver'], 'javascript': ['eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'typescript': [], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 
 " Deoplete.
 " let g:deoplete#enable_at_startup = 1
@@ -142,8 +144,6 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 " nnoremap <silent> <C-d> :call comfortable_motion#flick(65)<cr>
 " nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
 " nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
-
-" Tagbar
 
 augroup AfterEverythingElse
   autocmd!
