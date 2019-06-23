@@ -11,7 +11,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'qpkorr/vim-bufkill'
+" Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
 Plug 'triglav/vim-visual-increment'
@@ -21,8 +21,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
-Plug 'peitalin/vim-jsx-typescript'
-" Plug 'ternjs/tern_for_vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
@@ -67,14 +67,13 @@ set path+=**
 set encoding=utf-8
 filetype plugin indent on
 " set number
-set tabstop=2
-set softtabstop=2
 set smarttab
 set shiftwidth=2
 set shiftround
 set expandtab
 set autoindent
 set smartindent
+" set softtabstop=2
 set laststatus=0
 " set nohlsearch
 set incsearch
@@ -92,35 +91,35 @@ set completeopt=noinsert,menuone,noselect
 " set spell
 set diffopt=vertical
 
-" Rainbow
-let g:rainbow_active = 1
+" " Rainbow
+" let g:rainbow_active = 1
 
-" Signify
-highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
-highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
+" " Signify
+" highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
+" highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
 
-" Nerdtree
-" let NERDTreeShowHidden=1
+" " Nerdtree
+" " let NERDTreeShowHidden=1
 
-" CtrlP
-let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
+" " CtrlP
+" let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 
-" Targets
-let g:targets_argOpening = '[({[]'
-let g:targets_argClosing = '[]})]'
+" " Targets
+" let g:targets_argOpening = '[({[]'
+" let g:targets_argClosing = '[]})]'
 
-" Multiple cursors
-let g:multi_cursor_quit_key = '<c-c>'
-function! Multiple_cursors_before()
-  call ncm2#lock('vim-multiple-cursors')
-endfunction
-function! Multiple_cursors_after()
-  call ncm2#unlock('vim-multiple-cursors')
-endfunction
+" " Multiple cursors
+" let g:multi_cursor_quit_key = '<c-c>'
+" function! Multiple_cursors_before()
+"   call ncm2#lock('vim-multiple-cursors')
+" endfunction
+" function! Multiple_cursors_after()
+"   call ncm2#unlock('vim-multiple-cursors')
+" endfunction
 
 " Ale
-let g:ale_linters = {'typescript': ['tsserver'], 'javascript': ['eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'typescript': [], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_linters = {'typescript': ['tsserver', 'eslint'], 'javascript': ['eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'typescript': ['eslint'], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
@@ -138,34 +137,30 @@ let g:ale_completion_enabled = 1
 " let g:tern_request_query = { 'completions': { 'includeKeywords': 1, 'sort': 1, 'guess': 1, 'url': 1, 'caseInsensitive': 1, 'origins': 1 } }
 
 " NCM2
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " Comfortable motion
 " nnoremap <silent> <C-d> :call comfortable_motion#flick(65)<cr>
 " nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
 " nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
+"
 
-augroup AfterEverythingElse
-  autocmd!
-  " Utis
-  autocmd VimEnter * :map \ <leader>
-  autocmd VimEnter * :inoremap <c-c> <esc>
-  autocmd VimEnter * :nnoremap <c-w><c-w> :w<cr>
-  autocmd VimEnter * :nnoremap <c-c><c-c> :qa!<cr>
-  autocmd VimEnter * :nnoremap <leader>t :NERDTreeToggle<cr>
-  autocmd VimEnter * :nnoremap <leader>f :NERDTreeFind<cr>
-  autocmd VimEnter * :nnoremap <leader>g :TagbarToggle<cr>
-  autocmd BufWritePost .vimrc :source %
-  " if !has('nvim')
-  "   autocmd VimEnter * :noremap <ScrollWheelUp> <c-y>
-  "   autocmd VimEnter * :noremap <ScrollWheelDown> <c-e>
-  " endif
-  " Moving
-  autocmd VimEnter * :noremap <c-j> 3j
-  autocmd VimEnter * :noremap <c-k> 3k
-  " Buffers
-  autocmd VimEnter * :nnoremap <c-n> :bn<cr>
-  autocmd VimEnter * :nnoremap <c-b> :bp<cr>
-  autocmd VimEnter * :nnoremap <c-x><c-x> :BD!<cr>
-augroup END
+:map \ <leader>
+:inoremap <c-c> <esc>
+:nnoremap <c-w><c-w> :w<cr>
+:nnoremap <c-c><c-c> :qa!<cr>
+:nnoremap <leader>t :NERDTreeToggle<cr>
+:nnoremap <leader>f :NERDTreeFind<cr>
+:nnoremap <leader>g :TagbarToggle<cr>
 
+:noremap <c-j> 3j
+:noremap <c-k> 3k
+:noremap <c-h> ^
+:noremap <c-l> $
+
+:nnoremap <c-n> :bn<cr>
+:nnoremap <c-b> :bp<cr>
+" :nnoremap <c-x><c-x> :BD!<cr>
+:nnoremap <c-x><c-x> :bd!<cr>
+
+autocmd BufWritePost .vimrc :source %
