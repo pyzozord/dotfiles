@@ -70,6 +70,7 @@ matter() {
 # home aliases
 alias nethack="telnet alt.org 23"
 alias wk=wiki
+alias nyan=~/projects/nyancat/nyancat
 
 #work aliases
 alias dashdir="cd ~/projects/frontend/dashboard"

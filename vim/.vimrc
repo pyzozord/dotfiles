@@ -164,3 +164,14 @@ let g:ale_completion_enabled = 1
 :nnoremap <c-x><c-x> :bd!<cr>
 
 autocmd BufWritePost .vimrc :source %
+" Quickfix list
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+nnoremap [Q :cfirst<cr>
+nnoremap ]Q :clast<cr>
+
+" Location list
+nnoremap ]l :lnext<cr>
+nnoremap [l :lprevious<cr>
+nnoremap [L :lfirst<cr>
+nnoremap ]L :llast<cr>
