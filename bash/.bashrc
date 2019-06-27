@@ -1,6 +1,6 @@
-# bash stuff
 prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
 
+export LC_ALL=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
@@ -68,8 +68,9 @@ matter() {
 }
 
 # home aliases
-alias nethack="telnet alt.org 23"
 alias wk=wiki
+alias nethack="telnet alt.org 23"
+alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
 
 #work aliases
 alias dashdir="cd ~/projects/frontend/dashboard"

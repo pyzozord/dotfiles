@@ -7,42 +7,24 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
-Plug 'triglav/vim-visual-increment'
-" Plug 'yuttie/comfortable-motion.vim'
 " Plug 'ludovicchabant/vim-gutentags'
-Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 " Plug 'peitalin/vim-jsx-typescript'
-" " Plug 'ternjs/tern_for_vim'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'vim-scripts/AutoComplPop'
-" Plug 'aperezdc/vim-lift'
-" Plug 'maralla/completor.vim'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'filipekiss/ncm2-look.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'ncm2/ncm2-go',  {'do': 'go get -u github.com/mdempsky/gocode'}
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'phpactor/ncm2-phpactor'
 Plug 'StanAngeloff/php.vim'
-Plug 'stephpy/vim-php-cs-fixer'
 call plug#end()
 
 " Load some plugins now to override them
@@ -66,7 +48,6 @@ let mapleader=" "
 set path+=**
 set encoding=utf-8
 filetype plugin indent on
-" set number
 set smarttab
 set shiftwidth=2
 set shiftround
@@ -75,7 +56,6 @@ set autoindent
 set smartindent
 " set softtabstop=2
 set laststatus=0
-" set nohlsearch
 set incsearch
 set wildmode=full
 set bufhidden=hide
@@ -85,82 +65,42 @@ set noruler
 set nowrap
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
-" set colorcolumn=80
 set splitright
 set completeopt=noinsert,menuone,noselect
 " set spell
 set diffopt=vertical
 
-" " Rainbow
-" let g:rainbow_active = 1
+" Rainbow
+let g:rainbow_active = 1
 
-" " Signify
-" highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
-" highlight SignifyLineDeleteFirstLine ctermbg=NONE guibg=NONE
+" CtrlP
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 
-" " Nerdtree
-" " let NERDTreeShowHidden=1
-
-" " CtrlP
-" let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
-
-" " Targets
-" let g:targets_argOpening = '[({[]'
-" let g:targets_argClosing = '[]})]'
-
-" " Multiple cursors
-" let g:multi_cursor_quit_key = '<c-c>'
-" function! Multiple_cursors_before()
-"   call ncm2#lock('vim-multiple-cursors')
-" endfunction
-" function! Multiple_cursors_after()
-"   call ncm2#unlock('vim-multiple-cursors')
-" endfunction
+" Targets
+let g:targets_argOpening = '[({[]'
+let g:targets_argClosing = '[]})]'
 
 " Ale
-let g:ale_linters = {'typescript': ['tsserver', 'eslint'], 'javascript': ['eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'typescript': ['eslint'], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_linters = {'typescript': ['tsserver', 'prettier'], 'javascript': ['eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
-" Deoplete.
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option({
-" \ 'auto_complete_delay': 200,
-" \ 'smart_case': v:true,
-" \ })
+map \ <leader>
+inoremap <c-c> <esc>
+nnoremap <c-w><c-w> :w<cr>
+nnoremap <c-c><c-c> :qa!<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <leader>g :TagbarToggle<cr>
 
-" Completor
-" let g:completor_min_chars = 1
+noremap <c-j> 3j
+noremap <c-k> 3k
+noremap <c-h> ^
+noremap <c-l> $
 
-" Tern
-" let g:tern_request_query = { 'completions': { 'includeKeywords': 1, 'sort': 1, 'guess': 1, 'url': 1, 'caseInsensitive': 1, 'origins': 1 } }
-
-" NCM2
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" Comfortable motion
-" nnoremap <silent> <C-d> :call comfortable_motion#flick(65)<cr>
-" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
-" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
-"
-
-:map \ <leader>
-:inoremap <c-c> <esc>
-:nnoremap <c-w><c-w> :w<cr>
-:nnoremap <c-c><c-c> :qa!<cr>
-:nnoremap <leader>t :NERDTreeToggle<cr>
-:nnoremap <leader>f :NERDTreeFind<cr>
-:nnoremap <leader>g :TagbarToggle<cr>
-
-:noremap <c-j> 3j
-:noremap <c-k> 3k
-:noremap <c-h> ^
-:noremap <c-l> $
-
-:nnoremap <c-n> :bn<cr>
-:nnoremap <c-b> :bp<cr>
-" :nnoremap <c-x><c-x> :BD!<cr>
-:nnoremap <c-x><c-x> :bd!<cr>
+nnoremap <c-n> :bn<cr>
+nnoremap <c-b> :bp<cr>
+nnoremap <c-x><c-x> :BD!<cr>
 
 autocmd BufWritePost .vimrc :source %
