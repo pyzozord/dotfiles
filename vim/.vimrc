@@ -7,11 +7,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
 Plug 'triglav/vim-visual-increment'
@@ -92,7 +92,7 @@ set completeopt=noinsert,menuone,noselect
 set diffopt=vertical
 
 " " Rainbow
-" let g:rainbow_active = 1
+let g:rainbow_active = 1
 
 " " Signify
 " highlight SignifyLineChangeDelete ctermbg=NONE guibg=NONE
@@ -102,33 +102,26 @@ set diffopt=vertical
 " " let NERDTreeShowHidden=1
 
 " " CtrlP
-" let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 
-" " Targets
-" let g:targets_argOpening = '[({[]'
-" let g:targets_argClosing = '[]})]'
+" Targets
+let g:targets_argOpening = '[({[]'
+let g:targets_argClosing = '[]})]'
 
 " " Multiple cursors
-" let g:multi_cursor_quit_key = '<c-c>'
-" function! Multiple_cursors_before()
-"   call ncm2#lock('vim-multiple-cursors')
-" endfunction
-" function! Multiple_cursors_after()
-"   call ncm2#unlock('vim-multiple-cursors')
-" endfunction
+let g:multi_cursor_quit_key = '<c-c>'
+function! Multiple_cursors_before()
+  call ncm2#lock('vim-multiple-cursors')
+endfunction
+function! Multiple_cursors_after()
+  call ncm2#unlock('vim-multiple-cursors')
+endfunction
 
 " Ale
-let g:ale_linters = {'typescript': ['tsserver', 'eslint'], 'javascript': ['eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'typescript': ['eslint'], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_linters = {'typescript': ['prettier', 'tsserver'], 'javascript': ['prettier', 'eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
-
-" Deoplete.
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option({
-" \ 'auto_complete_delay': 200,
-" \ 'smart_case': v:true,
-" \ })
 
 " Completor
 " let g:completor_min_chars = 1
@@ -139,39 +132,36 @@ let g:ale_completion_enabled = 1
 " NCM2
 " autocmd BufEnter * call ncm2#enable_for_buffer()
 
-" Comfortable motion
-" nnoremap <silent> <C-d> :call comfortable_motion#flick(65)<cr>
-" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
-" nnoremap <silent> <C-u> :call comfortable_motion#flick(-65)<cr>
-"
+map \ <leader>
+inoremap <c-c> <esc>
+nnoremap <c-w><c-w> :w<cr>
+nnoremap <c-c><c-c> :qa!<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <leader>g :TagbarToggle<cr>
 
-:map \ <leader>
-:inoremap <c-c> <esc>
-:nnoremap <c-w><c-w> :w<cr>
-:nnoremap <c-c><c-c> :qa!<cr>
-:nnoremap <leader>t :NERDTreeToggle<cr>
-:nnoremap <leader>f :NERDTreeFind<cr>
-:nnoremap <leader>g :TagbarToggle<cr>
+noremap <c-j> 3j
+noremap <c-k> 3k
+noremap <c-h> ^
+noremap <c-l> $
 
-:noremap <c-j> 3j
-:noremap <c-k> 3k
-:noremap <c-h> ^
-:noremap <c-l> $
-
-:nnoremap <c-n> :bn<cr>
-:nnoremap <c-b> :bp<cr>
-" :nnoremap <c-x><c-x> :BD!<cr>
-:nnoremap <c-x><c-x> :bd!<cr>
+nnoremap <c-n> :bn<cr>
+nnoremap <c-b> :bp<cr>
+nnoremap <c-x><c-x> :BD!<cr>
+nnoremap <c-x><c-x> :bd!<cr>
 
 autocmd BufWritePost .vimrc :source %
+
 " Quickfix list
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
 nnoremap [Q :cfirst<cr>
 nnoremap ]Q :clast<cr>
+nnoremap <leader>q :copen<cr>
 
 " Location list
 nnoremap ]l :lnext<cr>
 nnoremap [l :lprevious<cr>
 nnoremap [L :lfirst<cr>
 nnoremap ]L :llast<cr>
+nnoremap <leader>l :lopen<cr>
