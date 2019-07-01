@@ -70,8 +70,13 @@ set completeopt=noinsert,menuone,noselect
 " set spell
 set diffopt=vertical
 
-" Rainbow
 let g:rainbow_active = 1
+
+" Ale
+let g:ale_linters = {'typescript': ['prettier', 'tsserver'], 'javascript': ['prettier', 'eslint'], 'go': ['gometalinter']}
+let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 
 " CtrlP
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
@@ -80,11 +85,14 @@ let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 let g:targets_argOpening = '[({[]'
 let g:targets_argClosing = '[]})]'
 
-" Ale
-let g:ale_linters = {'typescript': ['tsserver', 'prettier'], 'javascript': ['eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['eslint'], 'go': ['gofmt', 'goimports']}
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+" Multiple cursors
+let g:multi_cursor_quit_key = '<c-c>'
+function! Multiple_cursors_before()
+  call ncm2#lock('vim-multiple-cursors')
+endfunction
+function! Multiple_cursors_after()
+  call ncm2#unlock('vim-multiple-cursors')
+endfunction
 
 map \ <leader>
 inoremap <c-c> <esc>
@@ -104,3 +112,15 @@ nnoremap <c-b> :bp<cr>
 nnoremap <c-x><c-x> :BD!<cr>
 
 autocmd BufWritePost .vimrc :source %
+
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+nnoremap [Q :cfirst<cr>
+nnoremap ]Q :clast<cr>
+nnoremap <leader>q :copen<cr>
+
+nnoremap ]l :lnext<cr>
+nnoremap [l :lprevious<cr>
+nnoremap [L :lfirst<cr>
+nnoremap ]L :llast<cr>
+nnoremap <leader>l :lopen<cr>

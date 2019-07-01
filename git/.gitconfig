@@ -4,6 +4,7 @@
 [core]
 	editor = nvim
 	ignorecase = false
+	excludesfile = /Users/michalradecki/.gitignore
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

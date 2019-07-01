@@ -1,9 +1,5 @@
 servers = (
-  {
-    address = "irc.dal.net";
-    chatnet = "DALnet";
-    port = "6667";
-  },
+  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
   {
     address = "ssl.efnet.org";
     chatnet = "EFNet";
@@ -51,7 +47,7 @@ servers = (
     use_tls = "yes";
     tls_verify = "yes";
   },
-  {
+  { 
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -64,7 +60,7 @@ servers = (
     tls_verify = "yes";
   },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
+  { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
@@ -78,7 +74,7 @@ chatnets = {
     max_msgs = "20";
     max_whois = "30";
   };
-  EFNet = {
+  EFNet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "4";
@@ -103,7 +99,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  IRCnet = {
+  IRCnet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -128,7 +124,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  Rizon = {
+  Rizon = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -415,3 +411,10 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
+hilights = (
+  {
+    text = "guys i wanna make a map <leader>l that will toggle location list on and off";
+    nick = "yes";
+    word = "yes";
+  }
+);

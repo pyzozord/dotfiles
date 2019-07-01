@@ -6,8 +6,7 @@ export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-# ssh
+export LESS=-RX
 
 ssh-add -K ~/.ssh/id_rsa
 
@@ -71,6 +70,7 @@ matter() {
 alias wk=wiki
 alias nethack="telnet alt.org 23"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
+alias nyan=~/projects/nyancat/nyancat
 
 #work aliases
 alias dashdir="cd ~/projects/frontend/dashboard"
