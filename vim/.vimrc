@@ -1,30 +1,39 @@
 call plug#begin('~/.vim/plugged')
+" core shit
 Plug 'roxma/nvim-yarp'
 Plug 'christoomey/vim-system-copy'
+Plug 'chriskempson/base16-vim'
+" grok vim bro
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
+Plug 'qpkorr/vim-bufkill'
+" excessive shit
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'qpkorr/vim-bufkill'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
-" Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
-Plug 'fatih/vim-go'
-Plug 'sheerun/vim-polyglot'
-" Plug 'peitalin/vim-jsx-typescript'
-Plug 'w0rp/ale'
-Plug 'chriskempson/base16-vim'
+" git shit
 Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
+" Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" tag shit
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+" language support shit
+Plug 'sheerun/vim-polyglot'
+Plug 'w0rp/ale'
+" Plug 'peitalin/vim-jsx-typescript'
+Plug 'fatih/vim-go'
 Plug 'StanAngeloff/php.vim'
+Plug 'StanAngeloff/php.vim'
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'stephpy/vim-php-cs-fixer'
 call plug#end()
 
 " Load some plugins now to override them
