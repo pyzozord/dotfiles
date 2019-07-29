@@ -31,6 +31,7 @@ export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
 
 # functions
+shit() { eval "$(fc -ln -1) | less -S"; }
 
 mood() {
   PS1=${prompts[$((RANDOM % ${#prompts[*]}))]}
@@ -65,6 +66,7 @@ keeprunning() {
 matter() {
   matterbridge -conf ~/.matterbridge.tom
 }
+
 
 # home aliases
 alias wk=wiki
