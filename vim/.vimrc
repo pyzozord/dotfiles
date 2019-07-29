@@ -133,3 +133,9 @@ nnoremap [l :lprevious<cr>
 nnoremap [L :lfirst<cr>
 nnoremap ]L :llast<cr>
 nnoremap <leader>l :lopen<cr>
+
+" function! FormatJson()
+"   :'<,'>!jq .
+" endfunction
+
+" vnoremap <leader>js :call FormatJson()<cr>
