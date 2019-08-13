@@ -54,7 +54,7 @@ highlight SignifySignChange ctermbg=NONE guibg=NONE
 
 " Random
 let mapleader=" "
-set path+=**
+set path+=**,.
 set encoding=utf-8
 filetype plugin indent on
 set smarttab
@@ -67,6 +67,7 @@ set smartindent
 set laststatus=0
 set incsearch
 set wildmode=full
+set wildignore+=*/node_modules/*
 set bufhidden=hide
 set hidden
 set mouse=a
