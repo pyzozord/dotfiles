@@ -109,7 +109,7 @@ inoremap <c-c> <esc>
 nnoremap <c-w><c-w> :w<cr>
 nnoremap <c-c><c-c> :qa!<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <leader>f :NERDTreeFind<cr>zz
 nnoremap <leader>g :TagbarToggle<cr>
 
 noremap <c-j> 3j
