@@ -72,7 +72,9 @@ matter() {
 alias wk=wiki
 alias nethack="telnet alt.org 23"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
-alias nyan=~/projects/nyancat/nyancat
+alias bat="tt++ ~/projects/dotfiles/tt++/bat.tt"
+alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
+alias sin="tt++ ~/projects/dotfiles/tt++/sin.tt"
 
 #work aliases
 alias dashdir="cd ~/projects/frontend/dashboard"
