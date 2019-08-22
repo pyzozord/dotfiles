@@ -8,6 +8,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'qpkorr/vim-bufkill'
@@ -30,7 +31,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'fatih/vim-go'
-Plug 'StanAngeloff/php.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'stephpy/vim-php-cs-fixer'
@@ -80,6 +80,7 @@ set completeopt=noinsert,menuone,noselect
 " set spell
 set diffopt=vertical
 
+" Rainbow
 let g:rainbow_active = 1
 
 " Ale
@@ -94,15 +95,6 @@ let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 " Targets
 let g:targets_argOpening = '[({[]'
 let g:targets_argClosing = '[]})]'
-
-" Multiple cursors
-let g:multi_cursor_quit_key = '<c-c>'
-function! Multiple_cursors_before()
-  call ncm2#lock('vim-multiple-cursors')
-endfunction
-function! Multiple_cursors_after()
-  call ncm2#unlock('vim-multiple-cursors')
-endfunction
 
 map \ <leader>
 inoremap <c-c> <esc>
