@@ -77,6 +77,18 @@ alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
 alias sin="tt++ ~/projects/dotfiles/tt++/sin.tt"
 
 #work aliases
+alias gp="git pull"
+alias gc="git commit"
+alias ga="git add"
+alias gm="git merge"
+alias gco="git checkout"
+alias gb="git branch"
+alias gp="git push"
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log --graph"
+
+#mb aliases
 alias dashdir="cd ~/projects/frontend/dashboard"
 alias coredir="cd ~/projects/sms-core/core"
 alias daemonsdir="cd ~/projects/frontend/daemons"
