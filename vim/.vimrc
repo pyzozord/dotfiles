@@ -25,7 +25,7 @@ Plug 'mhinz/vim-signify'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " tag shit
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " language support shit
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
@@ -103,6 +103,7 @@ nnoremap <c-c><c-c> :qa!<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>zz
 nnoremap <leader>g :TagbarToggle<cr>
+nnoremap <leader>o :tab new \| b #<cr>
 
 noremap <c-j> 3j
 noremap <c-k> 3k
