@@ -43,6 +43,7 @@ runtime! plugin/sensible.vim
 set termguicolors
 colorscheme base16-tomorrow-night
 colorscheme base16-chalk
+colorscheme base16-material-darker
 syntax enable
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
