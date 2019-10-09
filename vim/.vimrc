@@ -18,6 +18,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'luochen1990/rainbow'
+Plug 'fxn/vim-monochrome'
+Plug 'ewilazarus/preto'
 " git shit
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
@@ -40,11 +42,15 @@ call plug#end()
 runtime! plugin/sensible.vim
 
 " Colors
-set termguicolors
+" set termguicolors
 colorscheme base16-tomorrow-night
 colorscheme base16-chalk
 colorscheme base16-material-darker
 syntax enable
+colorscheme monochrome
+colorscheme preto
+let g:monochrome_italic_comments = 1
+" syntax off
 set background=dark
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
@@ -82,7 +88,7 @@ set completeopt=noinsert,menuone,noselect
 set diffopt=vertical
 
 " Rainbow
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 " Ale
 let g:ale_linters = {'typescript': ['prettier', 'tsserver'], 'javascript': ['prettier', 'eslint'], 'go': ['gometalinter']}
@@ -96,6 +102,9 @@ let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git'
 " Targets
 let g:targets_argOpening = '[({[]'
 let g:targets_argClosing = '[]})]'
+
+" Nerdtree
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 map \ <leader>
 inoremap <c-c> <esc>
