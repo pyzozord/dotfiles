@@ -82,6 +82,7 @@ alias gc="git commit"; __git_complete gc _git_commit
 alias ga="git add"; __git_complete ga _git_add
 alias gm="git merge"; __git_complete gm _git_merge
 alias gco="git checkout"; __git_complete gco _git_checkout
+alias gq="git checkout @{-1}";
 alias gb="git branch"; __git_complete gb _git_branch
 alias gps="git push"; __git_complete gps _git_push
 alias gs="git status"; __git_complete gs _git_status
