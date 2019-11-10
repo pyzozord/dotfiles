@@ -1,9 +1,9 @@
 call plug#begin('~/.vim/plugged')
-" core shit
-Plug 'roxma/nvim-yarp'
-Plug 'christoomey/vim-system-copy'
-Plug 'chriskempson/base16-vim'
-" grok vim bro
+" " core shit
+" Plug 'roxma/nvim-yarp'
+" Plug 'christoomey/vim-system-copy'
+" " Plug 'chriskempson/base16-vim'
+" " grok vim bro
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -12,30 +12,30 @@ Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'qpkorr/vim-bufkill'
-" excessive shit
-Plug 'editorconfig/editorconfig-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'iamcco/markdown-preview.vim'
-Plug 'luochen1990/rainbow'
-Plug 'fxn/vim-monochrome'
-Plug 'ewilazarus/preto'
-" git shit
-Plug 'tpope/vim-fugitive'
+" " excessive shit
+" Plug 'editorconfig/editorconfig-vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'scrooloose/nerdtree'
+" Plug 'iamcco/markdown-preview.vim'
+" Plug 'luochen1990/rainbow'
+" " Plug 'fxn/vim-monochrome'
+" " Plug 'ewilazarus/preto'
+" " git shit
+" Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-" Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" tag shit
-Plug 'ludovicchabant/vim-gutentags'
-" Plug 'majutsushi/tagbar'
-" language support shit
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
-" Plug 'peitalin/vim-jsx-typescript'
-Plug 'fatih/vim-go'
-Plug 'StanAngeloff/php.vim'
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'stephpy/vim-php-cs-fixer'
+" " Plug 'airblade/vim-gitgutter'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" " tag shit
+" Plug 'ludovicchabant/vim-gutentags'
+" " Plug 'majutsushi/tagbar'
+" " language support shit
+" Plug 'sheerun/vim-polyglot'
+" Plug 'w0rp/ale'
+" " Plug 'peitalin/vim-jsx-typescript'
+" Plug 'fatih/vim-go'
+" Plug 'StanAngeloff/php.vim'
+" Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+" Plug 'stephpy/vim-php-cs-fixer'
 call plug#end()
 
 " Load some plugins now to override them
@@ -43,15 +43,15 @@ runtime! plugin/sensible.vim
 
 " Colors
 " set termguicolors
-colorscheme base16-tomorrow-night
-colorscheme base16-chalk
-colorscheme base16-material-darker
-syntax enable
-colorscheme monochrome
-colorscheme preto
-let g:monochrome_italic_comments = 1
-" syntax off
-set background=dark
+" colorscheme base16-tomorrow-night
+" colorscheme base16-chalk
+" colorscheme base16-material-darker
+" syntax enable
+" colorscheme monochrome
+" colorscheme preto
+" let g:monochrome_italic_comments = 1
+" set background=dark
+syntax off
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
