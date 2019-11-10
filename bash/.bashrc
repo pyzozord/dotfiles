@@ -3,7 +3,7 @@ prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆'
 export LC_ALL=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM=xterm-256color
-export TERM=screen-256color
+# export TERM=screen-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -70,7 +70,7 @@ matter() {
 
 # home aliases
 alias wk=wiki
-alias nethack="telnet alt.org 23"
+alias nethack="ssh nethack@alt.org"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
 alias bat="tt++ ~/projects/dotfiles/tt++/bat.tt"
 alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
@@ -87,6 +87,7 @@ alias gb="git branch"; __git_complete gb _git_branch
 alias gps="git push"; __git_complete gps _git_push
 alias gs="git status"; __git_complete gs _git_status
 alias gd="git diff"; __git_complete gd _git_diff
+alias gds="git diff --compact-summary"; __git_complete gd _git_diff
 alias gl="git log --graph"; __git_complete gl _git_log
 
 #mb aliases
