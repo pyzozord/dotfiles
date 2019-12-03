@@ -24,9 +24,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 " Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" tag shit
-Plug 'ludovicchabant/vim-gutentags'
-" Plug 'majutsushi/tagbar'
 " language support shit
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
