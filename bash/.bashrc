@@ -30,7 +30,9 @@ export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
 
 # functions
-shit() { eval "$(fc -ln -1) | less -S"; }
+function scout() {
+  for F in ${@-./*}; do echo "$(find $F | wc -l) $F"; done | sort -r
+}
 
 mood() {
   PS1=${prompts[$((RANDOM % ${#prompts[*]}))]}
@@ -38,41 +40,12 @@ mood() {
 
 mood
 
-urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
-
-bro() {
-  local domain=$(echo $1 | sed -nE 's|(https?://[^/]*)/.*|\1|pg')
-  if [ ! -t 0 ]; then
-    local html=`cat`
-  else
-    local html=$(curl -L -A "secretagent" "$@" )
-  fi
-  local formatted=$(echo "$html" | html-to-text --ignore-href --linkHrefBaseUrl=$domain --ignore-image)
-  less <<< "$formatted"
-}
-
-wiki() {
-  eval "bro https://en.wikipedia.org/w/index.php -G --data-urlencode search=\"$@\""
-}
-
-keeprunning() {
-  while true; do
-    $@
-    sleep 1
-  done
-}
-
-matter() {
-  matterbridge -conf ~/.matterbridge.tom
-}
-
 # home aliases
 alias wk=wiki
 alias nethack="ssh nethack@alt.org"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
-alias bat="tt++ ~/projects/dotfiles/tt++/bat.tt"
 alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
-alias sin="tt++ ~/projects/dotfiles/tt++/sin.tt"
+alias gen="tt++ ~/projects/dotfiles/tt++/gen.tt"
 
 #work aliases
 alias gp="git pull"; __git_complete gp _git_pull
