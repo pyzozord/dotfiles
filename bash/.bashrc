@@ -45,15 +45,16 @@ alias wk=wiki
 alias nethack="ssh nethack@alt.org"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
 alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
-alias gen="tt++ ~/projects/dotfiles/tt++/gen.tt"
+alias nyan="~/projects/nyancat/src/nyancat"
 
 #work aliases
+alias grip="grep -rinC5"
 alias gp="git pull"; __git_complete gp _git_pull
 alias gc="git commit"; __git_complete gc _git_commit
 alias ga="git add"; __git_complete ga _git_add
 alias gm="git merge"; __git_complete gm _git_merge
 alias gco="git checkout"; __git_complete gco _git_checkout
-alias gq="git checkout @{-1}";
+gq() { git checkout @{${1:--1}}; };
 alias gb="git branch"; __git_complete gb _git_branch
 alias gps="git push"; __git_complete gps _git_push
 alias gs="git status"; __git_complete gs _git_status
@@ -66,9 +67,9 @@ alias dashdir="cd ~/projects/frontend/dashboard"
 alias coredir="cd ~/projects/sms-core/core"
 alias daemonsdir="cd ~/projects/frontend/daemons"
 alias apidir="cd ~/projects/api0/rest-api"
-alias devstart="cd ~/projects/supportive/dash-core-development/;./start.sh"
-alias devstop="cd ~/projects/supportive/dash-core-development/;./stop.sh"
-alias devrestart="cd ~/projects/supportive/dash-core-development/;./restart.sh"
+alias devstart="(cd ~/projects/supportive/dash-core-development/;./start.sh)"
+alias devstop="(cd ~/projects/supportive/dash-core-development/;./stop.sh)"
+alias devrestart="(cd ~/projects/supportive/dash-core-development/;./restart.sh)"
 alias dashssh="dashdir;docker-compose exec dashboard bash"
 alias coressh="coredir;docker-compose exec web bash"
 alias daemonsssh="daemonsdir;docker-compose exec daemons bash"
