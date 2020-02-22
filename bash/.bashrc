@@ -34,6 +34,10 @@ function scout() {
   for F in ${@-./*}; do echo "$(find $F | wc -l) $F"; done | sort -r
 }
 
+function tree() {
+  find ${@-./*} | sed -E 's:[^/]+/: :g'
+}
+
 mood() {
   PS1=${prompts[$((RANDOM % ${#prompts[*]}))]}
 }
@@ -74,3 +78,4 @@ alias dashssh="dashdir;docker-compose exec dashboard bash"
 alias coressh="coredir;docker-compose exec web bash"
 alias daemonsssh="daemonsdir;docker-compose exec daemons bash"
 alias apissh="apidir;docker-compose exec api bash"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
