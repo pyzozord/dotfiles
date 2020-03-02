@@ -28,10 +28,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 " Plug 'peitalin/vim-jsx-typescript'
-Plug 'fatih/vim-go'
-Plug 'StanAngeloff/php.vim'
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'fatih/vim-go'
+" Plug 'StanAngeloff/php.vim'
 call plug#end()
 
 " Load some plugins now to override them
