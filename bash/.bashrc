@@ -45,11 +45,8 @@ mood() {
 mood
 
 # home aliases
-alias wk=wiki
 alias nethack="ssh nethack@alt.org"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
-alias toril="tt++ ~/projects/dotfiles/tt++/toril.tt"
-alias nyan="~/projects/nyancat/src/nyancat"
 
 #work aliases
 alias grip="grep -rinC5"
