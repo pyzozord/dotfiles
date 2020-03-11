@@ -28,6 +28,7 @@ fi
 export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # functions
 function scout() {
@@ -75,4 +76,3 @@ alias dashssh="dashdir;docker-compose exec dashboard bash"
 alias coressh="coredir;docker-compose exec web bash"
 alias daemonsssh="daemonsdir;docker-compose exec daemons bash"
 alias apissh="apidir;docker-compose exec api bash"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
