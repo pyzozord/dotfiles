@@ -88,10 +88,13 @@ chatnets = {
   };
   Freenode = {
     type = "IRC";
+    autosendcmd = "/msg nickserv identify pyzozord nmb344; /window 2; /wc";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
-    autosendcmd = "/msg nickserv identify pyzozord nmb344; /window 2; /wc";
+    sasl_mechanism = "PLAIN";
+    sasl_username = "pyzozord";
+    sasl_password = "nmb344";
   };
   GameSurge = {
     type = "IRC";
