@@ -43,7 +43,13 @@ mood() {
   PS1=${prompts[$((RANDOM % ${#prompts[*]}))]}
 }
 
+whatthecommit() {
+  curl -fs --max-time 0.3 http://whatthecommit.com/index.txt
+}
+
 mood
+pwd
+whatthecommit
 
 # home aliases
 alias nethack="ssh nethack@alt.org"
