@@ -29,7 +29,6 @@ fi
 export NVM_DIR=$HOME/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # functions
 function scout() {
@@ -50,7 +49,7 @@ mood
 alias nethack="ssh nethack@alt.org"
 alias aard="tt++ ~/projects/dotfiles/tt++/aard.tt"
 
-#work aliases
+# work aliases
 alias grip="grep -rinC5"
 alias gp="git pull"; __git_complete gp _git_pull
 alias gc="git commit"; __git_complete gc _git_commit
