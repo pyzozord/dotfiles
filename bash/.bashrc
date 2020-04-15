@@ -36,7 +36,7 @@ function scout() {
 }
 
 function tree() {
-  find ${@-./*} | sed -E 's:[^/]+/: :g'
+  find ${@-./*} | sed -E 's:/?[^/]+/: :g'
 }
 
 mood() {
