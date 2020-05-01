@@ -86,8 +86,8 @@ set diffopt=vertical
 " let g:rainbow_active = 1
 
 " Ale
-let g:ale_linters = {'typescriptreact': ['tslint', 'tsserver'], 'typescript': ['tsserver', 'eslint'], 'javascript': ['prettier', 'eslint'], 'go': ['gometalinter']}
-let g:ale_fixers = {'typescriptreact': ['prettier','tslint'], 'typescript': ['prettier', 'eslint'], 'javascript': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_linters = {'typescriptreact': ['eslint', 'tslint', 'tsserver'], 'typescript': ['eslint', 'tsserver', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'],  'go': ['gometalinter']}
+let g:ale_fixers = {'typescriptreact': ['eslint','tslint'], 'typescript': ['prettier', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
