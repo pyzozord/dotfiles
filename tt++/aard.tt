@@ -1,1 +1,108 @@
-#SESS aard aardwolf.org 23
+#!/usr/local/bin/tt++
+
+#macro {\eu} { #buffer up 10 }
+#macro {\ed} { #buffer down 10 }
+
+#var map[width] 40
+#var map[height] 15
+
+#event {SESSION CONNECTED} {
+    #split 0 0 0 $map[width]+2;
+    #map create 100000;
+    #map read map;
+    #map goto 1;
+    #map flag static on;
+    #map flag nofollow on;
+    #map flag asciigraphics on;
+    #screen raise SCREEN RESIZE;
+}
+
+#event {PROGRAM START}
+{
+    #var CLIENT_NAME %0;
+    #var CLIENT_VERSION %1;
+    #sess aard aardwolf.org 23
+}
+
+#event {SESSION DISCONNECTED}
+{
+    #map write map;
+}
+
+#EVENT {SCREEN RESIZE}
+{
+    #var screen[ROWS] %0;
+    #var screen[COLS] %1;
+    #map offset 0 $screen[COLS]-$map[width] $map[height] $screen[COLS];
+    #delay {1} {#map flag vtmap on;};
+}
+
+#nop == GMCP ==
+
+#format IAC %a 255
+#format DONT %a 254
+#format DO %a 253
+#format WONT %a 252
+#format WILL %a 251
+#format SB %a 250
+#format SE %a 240
+#format GMCP %a 201
+
+#var {debug} {0};
+
+#alias {gmcpdebug {on|off}}
+{
+    #if {"%1" == "on"} { #var {debug} {1}; };
+    #else { #var {debug} {0} };
+    #showme { Debug is <139>$debug<099> };
+    #nop;
+}
+
+#event {IAC WILL GMCP}
+{
+    #send {$IAC$DO$GMCP\};
+    #send {$IAC$SB$GMCP Core.Hello { "client": "$CLIENT_NAME", "version": "$CLIENT_VERSION" } $IAC$SE\};
+    #send {$IAC$SB$GMCP Core.Supports.Set ["Char 1", "Comm 1", "Room 1", "Group 1"] $IAC$SE\}
+    #nop;
+}
+
+#event {IAC SB GMCP room.info IAC SE}
+{
+    #if {"$debug" == "1"} { #showme %1 };
+    #var gmcp[room][info] {%0};
+
+    #if {$gmcp[room][info][num] == -1}
+    {
+        #if {"$debug" == "1"} { #showme num -1 };
+        #return
+    };
+
+    #map goto {$gmcp[room][info][num]} {dig};
+    #map get roomarea {result};
+
+    #if {"$result" == ""}
+    {
+         #map set roomarea $gmcp[room][info][zone];
+         #map set roomnote $gmcp[room][info][environment];
+         #map set roomname $gmcp[room][info][name];
+         #map set roomterr $gmcp[room][info][terrain];
+         #map set roominfo $gmcp[room][info][details];
+         #map set roomcolor <178>
+    };
+
+    #foreach {*gmcp[room][info][exits][]} {exit}
+    {
+         #map get {roomexit} {result};
+         #if {&result[$exit] == 0}
+         {
+              #map get {roomvnum} {result} {$gmcp[room][info][exits][$exit]};
+              #map dig {$exit} {$gmcp[room][info][exits][$exit]};
+              #if {$result == 0}
+              {
+                   #map set {roomcolor} {} {$gmcp[room][info][exits][$exit]}
+              }
+         }
+    }
+
+    #map write map;
+}
