@@ -69,19 +69,3 @@ alias gs="git status"; __git_complete gs _git_status
 alias gd="git diff"; __git_complete gd _git_diff
 alias gds="git diff --compact-summary"; __git_complete gd _git_diff
 alias gl="git log --graph"; __git_complete gl _git_log
-
-#mb aliases
-alias dashdir="cd ~/projects/frontend/dashboard"
-alias coredir="cd ~/projects/sms-core/core"
-alias daemonsdir="cd ~/projects/frontend/daemons"
-alias apidir="cd ~/projects/api0/rest-api"
-alias billingdir="cd ~/projects/bat/billing"
-alias devstart="(cd ~/projects/supportive/dash-core-development/;./start.sh)"
-alias devstop="(cd ~/projects/supportive/dash-core-development/;./stop.sh)"
-alias devrestart="(cd ~/projects/supportive/dash-core-development/;./restart.sh)"
-alias devcleanup="(cd ~/projects/supportive/dash-core-development/;./cleanup.sh)"
-alias dashssh="dashdir;docker-compose exec dashboard bash"
-alias coressh="coredir;docker-compose exec web bash"
-alias billingssh="billingdir;docker-compose exec billing bash"
-alias daemonsssh="daemonsdir;docker-compose exec daemons bash"
-alias apissh="apidir;docker-compose exec api bash"
