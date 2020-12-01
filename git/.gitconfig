@@ -1,6 +1,3 @@
-[user]
-	name = Michal Radecki
-	email = odrzutowiec@gmail.com
 [core]
 	editor = vi
 	ignorecase = false
