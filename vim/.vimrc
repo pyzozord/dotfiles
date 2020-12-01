@@ -27,6 +27,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " language support shit
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
+
 " Plug 'peitalin/vim-jsx-typescript'
 " Plug 'fatih/vim-go'
 " Plug 'StanAngeloff/php.vim'
@@ -60,12 +61,12 @@ set path+=**,.
 set encoding=utf-8
 filetype plugin indent on
 set smarttab
+set tabstop=4
 set shiftwidth=2
 set shiftround
-set expandtab
+" set noexpandtab
 set autoindent
-set smartindent
-" set softtabstop=2
+" set smartindent
 set laststatus=0
 set incsearch
 set wildmode=full
@@ -82,11 +83,21 @@ set completeopt=noinsert,menuone,noselect
 " set spell
 set diffopt=vertical
 
+"hl only in commandline when searching
+set nohlsearch
+augroup hlsearch | au!
+	au CmdlineEnter /,\? :set hlsearch
+	au CmdlineLeave /,\? :set nohlsearch
+augroup end
+
+" filetypes
+autocmd filetype c setlocal shiftwidth=4 noexpandtab
+
 " Rainbow
 " let g:rainbow_active = 1
 
 " Ale
-let g:ale_linters = {'typescriptreact': ['eslint', 'tslint', 'tsserver'], 'typescript': ['eslint', 'tsserver', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'],  'go': ['gometalinter']}
+let g:ale_linters = {'typescriptreact': ['eslint', 'tslint', 'tsserver'], 'typescript': ['eslint', 'tsserver', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'],	'go': ['gometalinter']}
 let g:ale_fixers = {'typescriptreact': ['eslint','tslint'], 'typescript': ['prettier', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
@@ -109,6 +120,7 @@ nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>zz
 nnoremap <leader>g :TagbarToggle<cr>
 nnoremap <leader>o :tab new \| b #<cr>
+nnoremap <c-a> /<c-r>=expand("<cword>")<cr>
 
 noremap <c-j> 3j
 noremap <c-k> 3k
@@ -132,9 +144,3 @@ nnoremap [l :lprevious<cr>
 nnoremap [L :lfirst<cr>
 nnoremap ]L :llast<cr>
 nnoremap <leader>l :lopen<cr>
-
-" function! FormatJson()
-"   :'<,'>!jq .
-" endfunction
-
-" vnoremap <leader>js :call FormatJson()<cr>
