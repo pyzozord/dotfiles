@@ -428,3 +428,5 @@ keyboard = (
   { key = "meta-u"; id = "scroll_backward"; data = ""; },
   { key = "meta-d"; id = "scroll_forward"; data = ""; }
 );
+logs = { };
+ignores = ( );
