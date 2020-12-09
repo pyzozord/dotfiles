@@ -69,6 +69,7 @@ alias gco="git checkout";
 gq() { git checkout @{${1:--1}}; };
 alias gb="git branch";
 alias gps="git push";
+alias gpsu="git push -u origin HEAD";
 alias gpsf="git push -f";
 alias gs="git status";
 alias gd="git diff";
