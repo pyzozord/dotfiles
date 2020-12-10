@@ -98,7 +98,7 @@ autocmd filetype c setlocal shiftwidth=4 noexpandtab
 
 " Ale
 let g:ale_linters = {'typescriptreact': ['eslint', 'tslint', 'tsserver'], 'typescript': ['eslint', 'tsserver', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'],	'go': ['gometalinter']}
-let g:ale_fixers = {'typescriptreact': ['eslint','tslint'], 'typescript': ['prettier', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
+let g:ale_fixers = {'typescriptreact': ['eslint','tslint','prettier'], 'typescript': ['prettier', 'eslint'], 'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
