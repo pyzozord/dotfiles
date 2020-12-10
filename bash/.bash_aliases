@@ -5,30 +5,30 @@ function toptal {
 }
 
 function browserstack {
-  BrowserStackLocal --key ql0b9njk0sSFBVI3evZo
+	BrowserStackLocal --key ql0b9njk0sSFBVI3evZo
 }
 
 function notes {
 	vip ~/Documents/notes.txt
 }
 
-prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🔞' '🎁' '💊' '🔫' '🎉' '🏀')
+prompts=('😈' '🚀' '🏆' '🧀' '🌍' '☕️' '🍦' '🍰' '🍿' '🦆' '🐵' '🤖' '💀' '🤘' '😬' '😳' '👻' '🤓' '😅' '🍻' '😎' '🔥' '🙈' '✨' '⭐️' '🍕' '🍏' '💎' '💰' '💡' '🎲' '😇' '🎃' '😱' '😡' '😵' '🎁' '💊' '🔫' '🎉' '🏀')
 
 function scout() {
-  for F in ${@-./*}; do echo "$(find $F | wc -l) $F"; done | sort -r
+	for F in ${@-./*}; do echo "$(find $F | wc -l) $F"; done | sort -r
 }
 
 function tree() {
-  find ${@-./*} | sed -E 's:/?[^/]+/: :g'
+	find ${@-./*} | sed -E 's:/?[^/]+/: :g'
 }
 
 mood() {
-  PS1="${prompts[$((RANDOM % ${#prompts[*]}))]} "
+	PS1="${prompts[$((RANDOM % ${#prompts[*]}))]} "
 }
 
 whatthecommit() {
-  text=$(curl -fs --max-time 0.3 http://whatthecommit.com/index.txt)
-  printf "\n$text\n"
+	text=$(curl -fs --max-time 0.3 http://whatthecommit.com/index.txt)
+	printf "\n$text\n"
 }
 
 
@@ -53,6 +53,10 @@ pj() {
 	";
 }
 
+vpn() {
+	openvpn3 session-start --config ~/Documents/client.ovpn
+}
+
 #(whatthecommit &)
 mood
 pwd
@@ -68,11 +72,16 @@ alias gr="git reset";
 alias gco="git checkout";
 gq() { git checkout @{${1:--1}}; };
 alias gb="git branch";
+alias gba="git branch -a";
 alias gps="git push";
 alias gpsu="git push -u origin HEAD";
 alias gpsf="git push -f";
 alias gs="git status";
 alias gd="git diff";
+alias gdc="git diff --cached";
 alias gds="git diff --compact-summary";
 alias gl="git log --graph";
 alias gtfo="confirm && gaa && gca --no-edit && gpsf";
+alias gf="git fetch"
+alias gfa="git fetch --all"
+alias gbl="git blame"
