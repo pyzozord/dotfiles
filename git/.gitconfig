@@ -9,3 +9,5 @@
 	required = true
 [pull]
 	rebase = true
+[hub]
+	protocol = ssh
