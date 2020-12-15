@@ -2,6 +2,7 @@
 	editor = vip
 	ignorecase = false
 	excludesfile = ~/.gitignore
+	hooksPath = ~/.githooks
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
