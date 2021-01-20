@@ -2,7 +2,7 @@
 # To prevent debug code from being accidentally committed, simply add a comment near your
 # debug code containing the keyword !nocommit and this script will abort the commit.
 #
-if git commit -v --dry-run | grep '^\+.*NOCOMMIT' 2>&1
+if git commit -v --dry-run | grep -i '^\+.*NOCOMMIT' 2>&1
 then
   echo "NOCOMMITS detected"
   exit 1
