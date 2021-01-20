@@ -15,3 +15,5 @@
 	rebase = true
 [hub]
 	protocol = ssh
+[url "git@github.com:"]
+	insteadOf = https://github.com/
