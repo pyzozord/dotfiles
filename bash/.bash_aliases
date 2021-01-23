@@ -1,4 +1,4 @@
-alias termbin="nc termbin.com 9999"
+alias termbin="nc -N termbin.com 9999"
 
 function toptal {
 	/home/michal/Projects/toptal/tester.js ${@:-"."};
