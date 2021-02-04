@@ -7,3 +7,5 @@ set ru
 set st
 set lr
 set filec=
+set cedit=
+map  :p:.,$!xclip -se c -o:q
