@@ -8,4 +8,6 @@ set st
 set lr
 set filec=
 set cedit=
-map  :p:.,$!xclip -se c -o:q
+map  :p:.,$!xclip -se c:q
+map  :vs
+map g 1G
