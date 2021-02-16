@@ -35,8 +35,8 @@
     printf "\n$text\n"
   }
 
-  confirm() { 
-    read -p "${1:-Are you sure?} " resp; [[ $resp = y* ]] 
+  confirm() {
+    read -p "${1:-Are you sure?} " resp; [[ $resp = y* ]]
   }
 
   pj() { # "pretty json"
@@ -44,7 +44,7 @@
       process.stdin.setEncoding('utf8');
       let s = '';
       process.stdin.on('readable', () => {
-        while ((chunk = process.stdin.read()) !== null) 
+        while ((chunk = process.stdin.read()) !== null)
           s += chunk;
       });
 
@@ -63,11 +63,17 @@
     git checkout @{${1:--1}};
   }
 
+  f() {
+    grep --color=always $@ | less -rs
+  }
 
 # aliases
 
   alias termbin="nc -N termbin.com 9999"
   alias grip="grep -rinC5"
+
+  alias hpro="gh pr view -w"
+  alias hprc="gh pr create -d"
 
   alias gp="git pull";
   alias gc="git commit";
@@ -76,6 +82,8 @@
   alias gaa="git add .";
   alias gm="git merge";
   alias gr="git reset";
+  alias grv="git revert";
+  alias grb="git rebase";
   alias gco="git checkout";
   alias gb="git branch";
   alias gba="git branch -a";
@@ -91,7 +99,8 @@
   alias gf="git fetch"
   alias gfa="git fetch --all"
   alias gbl="git blame"
-
+  alias gwc="git whatchanged"
+  alias gsh="git stash"
 
 # exec commands
 
