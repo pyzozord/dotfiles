@@ -6,8 +6,8 @@
 
 # functions
 
-  toptal() {
-    /home/michal/Projects/toptal/tester.js ${@:-"."};
+  comp() {
+    /home/michal/Projects/competetive/tester.js ${@:-"."};
   }
 
   browserstack() {
